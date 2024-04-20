@@ -7,12 +7,15 @@
     <script>
         function sendExitClassMessage() {
             // Check if Android.postMessage is available and send message
- if (typeof Android !== 'undefined' && Android.postMessage) {
+if (typeof Android !== 'undefined' && typeof Android.postMessage === 'function') {
     // Call Android.postMessage to send a message to the Android app
     Android.postMessage(JSON.stringify({
         code: 'EXIT_CLASS',
         message: 'A student left the live class.'
-    }))
+    }));
+} else {
+    console.error('Android.postMessage is not available.');
+}
 }
 
 }
