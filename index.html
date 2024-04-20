@@ -8,10 +8,10 @@
    function sendExitClassMessage() {
              
                 // Call Android.postMessage to send a message to the Android app
-                Android.postMessage(JSON.stringify({
+                Android.postMessage({
                     code: 'EXIT_CLASS',
                     message: 'A student left the live class.'
-                }));
+                });
           
         }
         
