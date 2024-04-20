@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Handle Android.postMessage</title>
     <script>
-        function postMessage() {
-   if(Android.postMessage) {
-
-Android.postMessage({
-
-code:'EXIT_CLASS',
-
-message:'A student left the live class.',
-
-});
+  function postMessage() {
+    if (typeof Android !== 'undefined' && Android.postMessage) {
+        // Call Android.postMessage to send a message to the Android app
+        Android.postMessage(JSON.stringify({
+            code: 'EXIT_CLASS',
+            message: 'A student left the live class.'
+        }));
+    } else {
+        console.error('Android.postMessage is not available.');
+    }
 }
         }
     </script>
