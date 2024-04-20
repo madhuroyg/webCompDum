@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Handle Android.postMessage</title>
     <script>
-  function sendExitClassMessage() {
+  fun sendExitClassMessage() {
     if (typeof Android !== 'undefined' && Android.postMessage) {
         // Call Android.postMessage to send a message to the Android app
         Android.postMessage(JSON.stringify({
