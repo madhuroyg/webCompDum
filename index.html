@@ -6,15 +6,16 @@
     <title>Handle Android.postMessage</title>
     <script>
   fun sendExitClassMessage() {
-    if (typeof Android !== 'undefined' && Android.postMessage) {
-        // Call Android.postMessage to send a message to the Android app
-        Android.postMessage(JSON.stringify({
-            code: 'EXIT_CLASS',
-            message: 'A student left the live class.'
-        }));
-    } else {
-        console.error('Android.postMessage is not available.');
-    }
+     if(Android.postMessage) {
+
+Android.postMessage({
+
+code:'EXIT_CLASS',
+
+message:'A student left the live class.',
+
+});
+}
 }
         
     </script>
